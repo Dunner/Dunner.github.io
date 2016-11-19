@@ -1,0 +1,365 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import url('https://fonts.googleapis.com/css?family=Droid+Sans+Mono');
+
+$text-color = #353535
+$text-color-muted = rgba(0,0,0,0.5)
+$text-color-logo = #111
+
+$space-big = 30px
+$space-medium = 20px
+$space-small = 15px
+
+header
+  padding-top 5rem
+  
+nav
+  display inline-block
+  float right
+  height auto
+  &:hover
+    & a
+      color $text-color-muted
+      &:after
+        width 0!important
+  a
+    text-decoration none
+    display inline-block
+    margin 0 $space-big
+    padding 0 2px
+    line-height 2
+    &.underline
+      border-bottom 0
+      line-height 2
+      &:after
+        width 100%
+        border-bottom 1px solid
+    &:after
+      content ''
+      display block
+      position absolute
+      left 0
+      right 0
+      top 0
+      bottom 0
+      width 0
+      margin 0 auto
+      transition width 0.1s linear
+    &:hover
+      color $text-color
+      &:after
+        width 100%!important
+        border-bottom 1px solid
+
+html
+  font-size 18px
+      
+body 
+  // font-family 'Open Sans', sans-serif
+  font-family 'Droid Sans Mono', monospace;
+  line-height 1.56
+  text-size-adjust 100%
+  -webkit-font-smoothing antialiased
+  color $text-color
+  font-size 18px
+  letter-spacing 1px
+  font-weight 300
+  background #efefef
+  width 100%
+  overflow-x hidden
+
+a
+  color inherit
+  cursor pointer
+  transition color 0.1s linear
+  &:hover
+    color $text-color-muted
+    
+footer
+  padding-top $space-big
+  
+h1
+  font-size 1.2rem
+  
+h2
+  font-size 1.1rem
+
+h3
+  font-size 1rem
+  
+#app
+  width 70em
+  max-width 90%
+  margin 0 auto
+
+.view
+  min-height 90vh
+  
+section
+  padding-top $space-big
+  margin-bottom 10rem
+  
+$directions = top right bottom left
+$sizes = big medium small
+for direction, i in $directions
+  for size, x in $sizes
+    .spacer-{direction}-{size}
+      margin-{direction} lookup('$space' + '-' + size)
+
+.float:after
+  display block
+  content ''
+  clear both
+for i in (1..20)
+  .w-{i*5}
+    width i*5%
+    float left
+
+[class*='w-'] 
+  padding-right $space-big
+  &:last-of-type 
+    padding-right 0
+
+
+.muted
+  color $text-color-muted
+  
+.underline 
+  border-bottom 1px solid
+  line-height 1.1
+  
+.divider
+  border-top 1px solid rgba(0,0,0,0.08)
+
+.block
+  display block
+  
+.inline-block
+  display inline-block
+
+// ================================ SPLIT
+
+
+.punctum
+  font-size 1.6rem
+  font-family 'Montserrat', sans-serif
+  text-transform uppercase
+  color inherit
+  letter-spacing 0.2vw
+  font-weight 700
+
+.intro
+  padding-top 35vh
+
+
+.project-image
+  background gray
+  width 100%
+  height 400px
+  
+.projects-wrapper
+  & *
+    transition all 300ms ease-in-out
+  & .hide
+    overflow hidden
+    margin 0
+    padding 0
+    height 0px
+    transition all 300ms ease-in-out
+    & .project-image
+      height 0px
+    
+  .view-project
+    float left
+    width calc(70% - 30px)
+    transition all 300ms ease-in-out
+    padding 0px
+    & .project-showcase
+      width calc(((100% + 30px) / 0.7))
+      margin-top 5vh
+      height 60vh
+      & .inside
+        width 100%
+        height 100%
+
+  .projects-sidebar
+    float left
+    padding-left 30px
+    width calc(30% + 30px)
+    margin-top calc(65vh + 30px)
+    & [class*='w-'] 
+      float none
+      padding-right 0
+      width 100%
+    & .intro
+      margin 0px
+
+
+nav
+  display inline-block
+  float right
+  height auto
+  &:hover
+    & a
+      color $text-color-muted
+      &:after
+        width 0!important
+  a
+    text-decoration none
+    display inline-block
+    margin 0 $space-big
+    padding 0 2px
+    line-height 2
+    &.underline
+      border-bottom 0
+      line-height 2
+      &:after
+        width 100%
+        border-bottom 1px solid
+    &:after
+      content ''
+      display block
+      position absolute
+      left 0
+      right 0
+      top 0
+      bottom 0
+      width 0
+      margin 0 auto
+      transition width 0.1s linear
+    &:hover
+      color $text-color
+      &:after
+        width 100%!important
+        border-bottom 1px solid
+
+.masthead
+  display inline-block
+  color transparent
+  
+  span.logo
+    background-position 100% 0
+    background-size 200% 100%
+
+  span.description
+    color $text-color-logo
+    text-align center
+    display block
+    position absolute
+    top 100%
+    left 0
+    right 0
+    
+  &:after
+    content ""
+    height 100%
+    width 100%
+    background #222
+    z-index 2
+    display block
+    position absolute
+    top 0
+    left 0
+    transform-origin left
+    transform scaleX(0)
+
+  &.run
+    animation mastheadInit 0.6s 0.5s forwards
+    &:after 
+      animation blackLoad 1.2s 0.5s cubic-bezier(0.860, 0.000, 0.070, 1.000) forwards
+
+.fade 
+  opacity 0
+  transform translateY(20px)
+  margin 10px 0 0 0
+  margin 0 auto
+  &.run
+    animation fadeInit 0.6s 2s forwards
+  &.run2
+    animation fadeInit 0.6s 3.3s forwards //0.6 3.3
+  &.delayhide
+    animation fadeInit 0.6s 2s forwards, fadeInitHide 0.6s 3.2s forwards
+    
+@keyframes mastheadInit
+  100%
+    transition 0.6s all cubic-bezier(0.860, 0.000, 0.070, 1.000) 0.8s
+    background-position 0 0
+    color $text-color-logo
+  
+@keyframes blackLoad
+  0%
+    transform-origin left
+    transform scaleX(0)
+  50%
+    transform-origin left
+    transform scaleX(1)
+  51%
+    transform-origin right
+  100%
+    transform-origin right
+    transform scaleX(0)
+
+@keyframes fadeInit
+  100%
+    transition 0.6s all ease-out
+    transform translateY(0)
+    opacity 1
+    
+@keyframes fadeInitHide
+  100%
+    transition 0.6s all ease-out
+    opacity 0
+
+
+.view-transition-enter 
+  opacity 0.01
+  transform translateY(20px)
+
+.view-transition-enter.view-transition-enter-active 
+  opacity 1
+  transform translateY(0px)
+  transition opacity 500ms 300ms ease-in, transform 300ms 300ms ease-in
+
+
+.view-transition-leave 
+  opacity 1
+  transform translateY(0px)
+  position absolute
+  top 0
+  left 0
+  right 0
+.view-transition-leave.view-transition-leave-active
+  opacity 0.01
+  transform translateY(20px)
+  transition opacity 300ms ease-in, transform 300ms ease-in
+  position absolute
+  top 0
+  left 0
+  right 0
+
+
+
+// Slide Left
+.view-project-transition-enter
+  opacity 0.01
+  transform translate3d(-100%, 0, 0)
+
+.view-project-transition-enter.view-project-transition-enter-active
+  opacity 1
+  transform translate3d(0, 0, 0)
+  transition all 500ms 300ms ease-in-out
+
+.view-project-transition-leave
+  opacity 1
+  transform translate3d(0, 0, 0)
+  position absolute
+  top 0
+  left 0
+  right 0
+.view-project-transition-leave.view-project-transition-leave-active
+  opacity 0.01
+  transform translate3d(100%, 0, 0)
+  transition all 300ms ease-in-out
+  position absolute
+  top 0
+  left 0
+  right 0
