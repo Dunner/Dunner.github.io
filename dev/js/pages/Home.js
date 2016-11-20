@@ -10,7 +10,10 @@ export default class Home extends React.Component {
     let twoProjects = projectStore.slice(0, 2).map((obj, i) => (
       <div class="w-50 spacer-bottom-big" key={i}>
         <Link to={'projects/'+obj.slug}>
-          <div class="project-image spacer-bottom-medium" />
+          <div class="project-image spacer-bottom-medium" 
+              style={{
+                backgroundImage: 'url('+obj.thumbURL+')'
+              }}/>
         </Link>
         <h3 class="spacer-bottom-small">
           <Link to={'projects/'+obj.slug} class="underline">
@@ -54,8 +57,9 @@ export default class Home extends React.Component {
           <div class="w-80 float">
 
             {twoProjects}
-
+            <h2 class="underline" style={{float:'left'}}><Link to="projects">> Se fler projekt</Link></h2>
           </div>
+
         </section>
 
       </div>

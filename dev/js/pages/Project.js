@@ -22,7 +22,7 @@ export default class Projects extends React.Component {
           projectFrame = (
             <iframe
               class="inside"
-              scrolling="no"
+              scrolling="auto"
               title="Step by step form"
               src={obj.frameURL}
               frameBorder="no"
@@ -33,7 +33,7 @@ export default class Projects extends React.Component {
         } else {
           projectFrame = (
             <div style={{
-              backgroundImage: obj.imageUrl
+              backgroundImage: obj.backgroundURL
             }}/>
           )
         }

@@ -1,8 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
 @import url('https://fonts.googleapis.com/css?family=Droid+Sans+Mono');
 
-@import url('/responsive.styl')
-
 $text-color = #353535
 $text-color-muted = rgba(0,0,0,0.5)
 
@@ -89,7 +87,7 @@ h3
   width 70em
   max-width 90%
   margin 0 auto
-  overflow-x hidden
+  overflow hidden
 
 .view
   min-height 90vh
@@ -157,6 +155,9 @@ for i in (1..20)
   background gray
   width 100%
   height 400px
+  background-size 100% auto
+  background-repeat no-repeat
+  background-position top center
   
 .projects-wrapper
   & *

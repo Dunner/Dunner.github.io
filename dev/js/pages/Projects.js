@@ -17,7 +17,10 @@ export default class Projects extends React.Component {
         class={projectParam == obj.slug ? 'hide w-50 spacer-bottom-big' : 'w-50 spacer-bottom-big'}
         key={i}>
         <Link to={'/projects/'+obj.slug}>
-          <div class="project-image spacer-bottom-medium" />
+          <div class="project-image spacer-bottom-medium" 
+              style={{
+                backgroundImage: 'url('+obj.thumbURL+')'
+              }}/>
         </Link>
         <h3 class="spacer-bottom-small">
           <Link to={'/projects/'+obj.slug} class="underline">
