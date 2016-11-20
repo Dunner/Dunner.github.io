@@ -10,24 +10,40 @@ export default class Projects extends React.Component {
     const { projectParam } = params;
     
     let project,
-        pageContent;
+        pageContent,
+        projectFrame;
 
     for(let obj of projectStore) {
       if (obj.slug == projectParam) {
         project = obj;
+
+        // =========== TODO
+        if (obj.frameURL) {
+          projectFrame = (
+            <iframe
+              class="inside"
+              scrolling="no"
+              title="Step by step form"
+              src={obj.frameURL}
+              frameBorder="no"
+              allowTransparency="true"
+              allowFullScreen="true">
+            </iframe>
+          )
+        } else {
+          projectFrame = (
+            <div style={{
+              backgroundImage: obj.imageUrl
+            }}/>
+          )
+        }
+        // ===========
+
+
         pageContent = (
           <div>
-            <div class="project-showcase" 
-                 style={{backgroundColor: obj.color}}>
-              <iframe
-                class="inside"
-                scrolling="no"
-                title="Step by step form"
-                src={obj.frameURL}
-                frameBorder="no"
-                allowTransparency="true"
-                allowFullScreen="true">
-              </iframe>
+            <div class="project-showcase">
+              {projectFrame}
             </div>
             <section>
               <h2>Projekt</h2>

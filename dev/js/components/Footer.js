@@ -28,7 +28,7 @@ export default class Footer extends React.Component {
       <footer class="divider spacer-bottom-big">
         <div class="float">
           <div class="w-20">
-            <h1 class="punctum">JH</h1>
+            <h1 class="punctum punctum-responsive">JH</h1>
           </div>
           <div class="w-40">
             <p class="muted">(+46) 73 544 01</p>

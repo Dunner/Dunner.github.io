@@ -2,6 +2,8 @@ require.context("../", true, /^\.\/.*\.html/);
 
 var reset = require('../styles/reset.css');
 var style = require('../styles/style.styl');
+var style = require('../styles/responsive.styl');
+var style = require('../styles/animations.styl');
 
 import React from "react";
 import ReactDOM from "react-dom";

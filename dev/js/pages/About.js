@@ -51,7 +51,7 @@ export default class About extends React.Component {
 
         <section class="float divider spacer-bottom-big">
           <h2 class="w-20 muted">Leker med</h2>
-          <div class="w-80 float">
+          <div class="w-80 float step-in">
             {elSkills['testing']}
           </div>
         </section>
@@ -60,28 +60,28 @@ export default class About extends React.Component {
 
           <h2 class="w-100 muted spacer-bottom-big">Utveckling</h2>
 
-          <h3 class="w-20 muted">Frontend</h3>
-          <div class="w-30 spacer-bottom-small">
+          <h3 class="w-20 muted step-in">Frontend</h3>
+          <div class="w-30 spacer-bottom-small step-in-twice">
             {elSkills['devFrontend']}
           </div>
 
-          <h3 class="w-20 muted">Backend</h3>
-          <div class="w-30 spacer-bottom-small">
+          <h3 class="w-20 muted step-in">Backend</h3>
+          <div class="w-30 spacer-bottom-small step-in-twice">
             {elSkills['devBackend']}
           </div>
 
-          <h3 class="w-20 muted">Mönster</h3>
-          <div class="w-30 spacer-bottom-small">
+          <h3 class="w-20 muted step-in">Mönster</h3>
+          <div class="w-30 spacer-bottom-small step-in-twice">
             {elSkills['devPatterns']}
           </div>
 
-          <h3 class="w-20 muted">Tekniker</h3>
-          <div class="w-30">
+          <h3 class="w-20 muted step-in">Tekniker</h3>
+          <div class="w-30 step-in-twice">
             {elSkills['devTechniques']}
           </div>
 
-          <h3 class="w-20 muted">Tjänster</h3>
-          <div class="w-30 spacer-bottom-small">
+          <h3 class="w-20 muted step-in">Tjänster</h3>
+          <div class="w-30 spacer-bottom-small step-in-twice">
             {elSkills['devServices']}
           </div>
 
@@ -91,13 +91,13 @@ export default class About extends React.Component {
 
           <h2 class="w-100 muted spacer-bottom-big">Design</h2>
           
-          <h3 class="w-20 muted">Verktyg</h3>
-          <div class="w-30 spacer-bottom-small">
+          <h3 class="w-20 muted step-in">Verktyg</h3>
+          <div class="w-30 spacer-bottom-small step-in-twice">
             {elSkills['designTools']}
           </div>
 
-          <h3 class="w-20 muted">Tekniker</h3>
-          <div class="w-30 spacer-bottom-small">
+          <h3 class="w-20 muted step-in">Tekniker</h3>
+          <div class="w-30 spacer-bottom-small step-in-twice">
             {elSkills['designTechniques']}
           </div>
 

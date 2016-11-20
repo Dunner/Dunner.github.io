@@ -24,6 +24,9 @@ export default class Header extends React.Component {
           <Link to="/" class="logo punctum">
             Jonathan Hägglund
           </Link>
+          <Link to="/" class="logo punctum-responsive">
+            JH
+          </Link>
           <span class="description fade run delayhide">
             En kort introduktion
           </span>

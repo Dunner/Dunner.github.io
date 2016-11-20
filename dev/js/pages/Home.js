@@ -32,7 +32,7 @@ export default class Home extends React.Component {
         
         <section class="float divider">
           <h2 class="w-20 muted">Jobbar med</h2>
-          <div class="w-80">
+          <div class="w-80 step-in">
 
             <div class="float spacer-bottom-medium">
               <div class="w-50">SaaS pagebuilder</div>

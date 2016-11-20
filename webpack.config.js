@@ -1,9 +1,13 @@
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var CopyWebpackPlugin = require('copy-webpack-plugin');
 var development = process.env.NODE_ENV !== "production";
 var autoprefixer = require('autoprefixer');
 var webpack = require('webpack');
 var path = require('path');
 
+
+
+console.log('Developoment: ',development, 'NODE_ENV:'+ process.env.NODE_ENV);
 /*
   development is alot faster then production
 
@@ -57,10 +61,12 @@ var config = {
     }
   },
   plugins: development? [] : [
+    new CopyWebpackPlugin([
+      { from: 'projects', to: '../dist/projects' }]),
     new ExtractTextPlugin("bundle.css"),
     new webpack.optimize.DedupePlugin(),
     new webpack.optimize.OccurenceOrderPlugin(),
-    new webpack.optimize.UglifyJsPlugin({ mangle: false, sourcemap: false }),
+    new webpack.optimize.UglifyJsPlugin({ mangle: false, sourcemap: false })
   ]
 };
 

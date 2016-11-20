@@ -2,25 +2,25 @@
 const projects = [
   { slug: 'storytime',
     name: 'Story Time',
-    color: 'purple',
+    backgroundUrl: '',
     shortDescription: 'Information om projektet',
-    frameURL: 'hi'
+    frameURL: '/projects/redthread/index.html'
   },
   { slug: 'pfeed',
     name: 'pFeed',
-    color: 'green',
+    backgroundUrl: '',
     shortDescription: 'Information om projektet',
     frameURL: 'hi'
   },
   { slug: 'spetsad',
     name: 'Spetsad',
-    color: 'blue',
+    backgroundUrl: '',
     shortDescription: 'Information om projektet',
     frameURL: 'hi'},
 
   { slug: 'stepform',
     name: 'Step by step form',
-    color: 'red',
+    backgroundUrl: '',
     shortDescription: 'Information om projektet',
     frameURL: '//codepen.io/Dunner/embed/JGBJgE/?height=800&theme-id=light&default-tab=result&embed-version=2'
   },
