@@ -1,20 +1,18 @@
 import React from "react";
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 import Header from "../components/Header"
 import Footer from "../components/Footer"
 
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
-
-
 export default class Layout extends React.Component {
 
   render() {
-    const { location } = this.props;
+    const { location, params } = this.props;
     const key = location.pathname.split('/')[1] || 'root'
 
     return (
       <div>
-        <Header location={location} />
+        <Header location={location} params={params} />
         <div class="view fade run2">
 
           <ReactCSSTransitionGroup

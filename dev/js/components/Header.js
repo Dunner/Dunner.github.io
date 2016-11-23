@@ -8,7 +8,9 @@ export default class Header extends React.Component {
   //activeClassName="underline"
 
   render() {
-    const { location } = this.props;
+    const { location, params } = this.props;
+    const { projectParam } = params;
+    console.log(location)
     const navigationElements = navigation.map( (obj, index) => (
       <Link class={ location.pathname == obj.path ?  'underline' : '' }
             to={obj.path}
@@ -18,7 +20,7 @@ export default class Header extends React.Component {
     ))
 
     return (
-      <header>
+      <header class={projectParam ? 'compress' : ''}>
 
         <h1 class="masthead run">
           <Link to="/" class="logo punctum">

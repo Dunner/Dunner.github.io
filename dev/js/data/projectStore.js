@@ -10,6 +10,14 @@ const projects = [
     frameURL: 'http://fossviking.com/'
   },
 
+  { slug: 'avatarmaker',
+    name: 'Avatar Maker',
+    path: '/projects/avatarmaker/',
+    backgroundURL: '',
+    thumbURL: '/projects/avatarmaker/img/avatarmaker-thumb.png',
+    shortDescription: 'Information om projektet',
+    frameURL: '//codepen.io/Dunner/embed/Nbjbqe/?height=800&theme-id=light&default-tab=result&embed-version=2'
+  },
 
   { slug: 'wpc',
     name: 'WPCTerrasse.no',
