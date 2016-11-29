@@ -10,7 +10,7 @@ export default class Header extends React.Component {
   render() {
     const { location, params } = this.props;
     const { projectParam } = params;
-    console.log(location)
+    
     const navigationElements = navigation.map( (obj, index) => (
       <Link class={ location.pathname == obj.path ?  'underline' : '' }
             to={obj.path}

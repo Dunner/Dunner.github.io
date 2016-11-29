@@ -7,7 +7,7 @@ var style = require('../styles/animations.styl');
 
 import React from "react";
 import ReactDOM from "react-dom";
-import { Router, Route, IndexRoute, browserHistory } from "react-router";
+import { Router, Route, IndexRoute, hashHistory } from "react-router";
 
 import scrollToY from "./scripts/scrollToY"
 
@@ -20,7 +20,7 @@ import Project from "./pages/Project";
 const app = document.getElementById('app');
 
 ReactDOM.render(
-	<Router history={browserHistory}>
+	<Router history={hashHistory}>
 		<Route 
       path="/"
       name="home"

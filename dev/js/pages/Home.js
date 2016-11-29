@@ -6,8 +6,7 @@ import projectStore from "../data/projectStore"
 export default class Home extends React.Component {
 
   render() {
-
-    let twoProjects = projectStore.slice(0, 2).map((obj, i) => (
+    let twoProjects = projectStore.getProjects(2).map((obj, i) => (
       <div class="w-50 spacer-bottom-big" key={i}>
         <Link to={'projects/'+obj.slug}>
           <div class="project-image spacer-bottom-medium" 

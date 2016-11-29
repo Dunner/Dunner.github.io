@@ -12,7 +12,7 @@ export default class Projects extends React.Component {
 
     let pageContent;
 
-    let projectsContent = projectStore.map((obj, i) => (
+    let projectsContent = projectStore.getProjects().map((obj, i) => (
       <div 
         class={projectParam == obj.slug ? 'hide w-50 spacer-bottom-big' : 'w-50 spacer-bottom-big'}
         key={i}>
