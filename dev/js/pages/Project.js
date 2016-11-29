@@ -35,6 +35,10 @@ export default class Projects extends React.Component {
       )
     }
 
+    let copy = '';
+    if (project.hasOwnProperty('html')) {
+      copy = project.html();
+    }
 
     pageContent = (
       <div>
@@ -44,7 +48,7 @@ export default class Projects extends React.Component {
         <section>
           <h2>Projekt</h2>
           <h3>{project.name}</h3>
-          {project.html()}
+          {copy}
         </section>
       </div>
     );

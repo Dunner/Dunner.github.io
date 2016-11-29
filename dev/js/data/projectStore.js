@@ -100,7 +100,7 @@ const projects = {
       backgroundURL: '',
       thumbURL: '/projects/pfeed/img/pfeed-thumb.png',
       shortDescription: 'Information om projektet',
-      frameURL: '35.156.18.28:8080'
+      frameURL: 'http://35.156.18.28:8080'
     },
 
     spetsad: { 
@@ -110,7 +110,7 @@ const projects = {
       backgroundURL: '',
       thumbURL: '/projects/spetsad/img/spetsad-thumb.png',
       shortDescription: 'Information om projektet',
-      frameURL: '35.156.18.28'
+      frameURL: 'http://35.156.18.28'
     },
   }
 };
