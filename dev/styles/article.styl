@@ -1,0 +1,43 @@
+
+#article
+  font-family 'Merriweather', serif;
+  font-weight 300
+  overflow hidden
+  h1,h2,h3
+    color #222
+  h1
+    font-size 2rem
+  h2 
+    font-size 1.5rem
+  h3
+    font-size 1rem
+
+.article-head
+  h2
+    margin-top 50px
+    font-weight bold
+    margin-bottom 20px
+    
+.article-body
+  padding 0 25px
+  
+img
+  padding-top 25px
+  &.center
+    margin 15px auto
+    display block
+  &.left
+    float left
+    margin-left -25px
+    margin-right 25px
+  &.right
+    float right
+    margin-left 25px
+    margin-right -25px
+  &+p
+    padding-top 25px
+    
+p
+  font-size 1.1rem
+  &+p 
+    padding-top 25px

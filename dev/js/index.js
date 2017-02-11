@@ -4,6 +4,7 @@ var reset = require('../styles/reset.css');
 var style = require('../styles/style.styl');
 var style = require('../styles/responsive.styl');
 var style = require('../styles/animations.styl');
+var style = require('../styles/article.styl');
 
 import React from "react";
 import ReactDOM from "react-dom";

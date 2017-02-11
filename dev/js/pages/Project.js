@@ -11,28 +11,43 @@ export default class Projects extends React.Component {
     
     let project,
         pageContent,
-        projectFrame;
+        projectFrame,
+        linkButton;
 
     project = projectStore.getProject(projectParam);
-    
+
+
+    if (project.linkURL) {
+      linkButton = (
+        <a href={project.linkURL}>Se projektet!</a>
+      );
+    } else {
+      linkButton = false;
+    }
+
     if (project.frameURL) {
       projectFrame = (
-        <iframe
-          class="inside"
-          scrolling="auto"
-          title="Step by step form"
-          src={project.frameURL}
-          frameBorder="no"
-          allowTransparency="true"
-          allowFullScreen="true">
-        </iframe>
+        <div class="project-showcase">
+          <iframe
+            class="inside"
+            scrolling="auto"
+            title="Step by step form"
+            src={project.frameURL}
+            frameBorder="no"
+            allowTransparency="true"
+            allowFullScreen="true">
+          </iframe>
+        </div>
       )
     } else {
       projectFrame = (
-        <div style={{
-          backgroundImage: project.backgroundURL
-        }}/>
+        <div/>
       )
+      // projectFrame = (
+      //   <div class="project-showcase" style={{
+      //     backgroundImage: project.backgroundURL
+      //   }}/>
+      // )
     }
 
     let copy = '';
@@ -41,15 +56,16 @@ export default class Projects extends React.Component {
     }
 
     pageContent = (
-      <div>
-        <div class="project-showcase">
-          {projectFrame}
+      <div id="article">
+        {projectFrame}
+        <div class="article-head">
+          <h2>{project.title}</h2>
         </div>
-        <section>
-          <h2>Projekt</h2>
-          <h3>{project.name}</h3>
+        <div class="article-body">
+
+          {linkButton}
           {copy}
-        </section>
+        </div>
       </div>
     );
 
@@ -62,9 +78,9 @@ export default class Projects extends React.Component {
     }
 
     return (
-      <div>
+      <section>
         {pageContent}
-      </div>
+      </section>
     );
 
   }

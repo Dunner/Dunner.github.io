@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
 @import url('https://fonts.googleapis.com/css?family=Droid+Sans+Mono');
+@import url('https://fonts.googleapis.com/css?family=Merriweather:300,400,700');
 
 $text-color = #353535
 $text-color-muted = rgba(0,0,0,0.5)
@@ -67,6 +68,11 @@ body
   font-weight 300
   background #efefef
 
+img
+  max-width 100%
+  height auto
+  border 0
+
 a
   color inherit
   cursor pointer
@@ -90,14 +96,14 @@ h3
   width 70em
   max-width 90%
   margin 0 auto
-  overflow hidden
+  // overflow hidden
 
 .view
   min-height 90vh
   
 section
   padding-top $space-big
-  margin-bottom 10rem
+  margin-bottom 9rem
   
 $directions = top right bottom left
 $sizes = big medium small
@@ -153,20 +159,84 @@ for i in (1..20)
   font-weight 700
   
 .intro
-  padding-top 35vh
+  padding-top 30vh
 
 
 .project-image
-  background gray
-  width 100%
-  height 400px
+  position absolute
+  top 0px
+  left 0px
+  right 0px
+  bottom -15px
   background-size 100% auto
   background-repeat no-repeat
   background-position top center
   
+.project-preview
+  width 100%
+  display block
+  &:hover
+    color $text-color-muted
+    &:after
+      content attr(title)
+      background #333
+      border-radius 5px
+      bottom 115%
+      color #fff
+      left -50px
+      padding 0 10px
+      line-height 30px
+      position absolute
+      z-index 98
+      min-width 500px
+    & .project-preview-circle
+      background transparent!important
+    & .project-preview-text
+      color $text-color-muted
+    
+.project-more
+  width 100%
+  display block
+  padding-left 30px
+
+.project-preview-text
+  padding-top 30px
+  font-family 'Montserrat', sans-serif
+  letter-spacing 0.2vw
+  font-size 20px
+  text-align center
+  color black
+.project-preview-circle
+  background #cecece
+  border-radius 100%
+  transition background 0.3s ease
+.project-image-small
+  position absolute
+  top 0px
+  left 0px
+  right 0px
+  bottom -15px
+  background-size 100% auto
+  background-repeat no-repeat
+  background-position top center
+.project-image-more
+  position absolute
+  top 0px
+  left 30px
+  right 0px
+  bottom -15px
+  background: url('/img/more.png')
+  background-size 80% auto
+  background-repeat no-repeat
+  background-position top center
+  
 .projects-wrapper
+  padding-top 10vh
   & *
     transition all 300ms ease-in-out
+    
+  & .intro
+    padding-top 10vh
   & .hide
     overflow hidden
     margin 0
@@ -175,14 +245,23 @@ for i in (1..20)
     transition all 300ms ease-in-out
     & .project-image
       height 0px
-    
+      
+  & .project-description
+    display block
+    height 130px
+    margin-bottom 20px
+    overflow hidden
+    h3
+      font-weight bold
+      
   .view-project
-    float left
-    width calc(70% - 30px)
+    float right
+    width calc(75% - 30px)
     transition all 300ms ease-in-out
-    padding 0px
+    overflow hidden
+    // background #efefef
     & .project-showcase
-      width calc(((100% + 30px) / 0.7))
+      width 100%
       margin-top 3vh
       background-color #fff
       height 75vh
@@ -192,17 +271,35 @@ for i in (1..20)
 
   .projects-sidebar
     float left
-    padding-left 30px
-    width calc(30% + 30px)
-    margin-top calc(76vh + 30px)
+    padding-right 30px
+    width calc(25% + 30px)
+    margin-left -50px
     & [class*='w-'] 
       float none
       padding-right 0
       width 100%
     & .intro
       margin 0px
-    .project-image
-      height 200px
+    .active
+      color black
+      padding-left 20px
+
+    .sidebar-project-hold-left
+      position absolute
+      top 0
+      left 0
+      display block
+      width 25%
+      
+    .sidebar-project-pop-right
+      display block
+      padding-left calc(25% + 8px)
+      top -3px
+      font-size 14px
+      padding-bottom 30px
+      h3
+        font-size 18px
+        font-weight bold
 
 
 nav
@@ -273,3 +370,9 @@ nav
     animation mastheadInit 0.6s 0.5s forwards
     &:after 
       animation blackLoad 1.2s 0.5s cubic-bezier(0.860, 0.000, 0.070, 1.000) forwards
+
+
+$lines = rgba(0,0,0,0.03)
+body
+  background-image linear-gradient(0deg,$lines 1pt,transparent 0px),linear-gradient(90deg,$lines 1pt,transparent 0px) //pt because px weird x-browsers
+  background-size 120px 120px

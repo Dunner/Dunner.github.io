@@ -46,15 +46,9 @@ export default class About extends React.Component {
 
 
         <section class="intro">
-          Erfarenhet med
+          Om mig
         </section>
 
-        <section class="float divider spacer-bottom-big">
-          <h2 class="w-20 muted">Leker med</h2>
-          <div class="w-80 float step-in">
-            {elSkills['testing']}
-          </div>
-        </section>
 
         <section class="float divider spacer-bottom-big">
 
@@ -101,6 +95,13 @@ export default class About extends React.Component {
             {elSkills['designTechniques']}
           </div>
 
+        </section>
+
+        <section class="float divider spacer-bottom-big">
+          <h2 class="w-20 muted">Lär mig</h2>
+          <div class="w-80 float step-in">
+            {elSkills['testing']}
+          </div>
         </section>
 
       </div>

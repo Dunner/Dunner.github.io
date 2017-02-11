@@ -52,7 +52,7 @@ const skills = {
     'Fixed/Fluid/Adaptive/Responsive Design'
   ],
   testing: [
-    'ES6',
+    'ES6/7',
     'Redux/Mobx',
     'Angular 2',
     'Flexbox',

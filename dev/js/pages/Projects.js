@@ -12,54 +12,72 @@ export default class Projects extends React.Component {
 
     let pageContent;
 
-    let projectsContent = projectStore.getProjects().map((obj, i) => (
-      <div 
-        class={projectParam == obj.slug ? 'hide w-50 spacer-bottom-big' : 'w-50 spacer-bottom-big'}
-        key={i}>
-        <Link to={'/projects/'+obj.slug}>
-          <div class="project-image spacer-bottom-medium" 
-              style={{
-                backgroundImage: 'url('+obj.thumbURL+')'
-              }}/>
-        </Link>
-        <h3 class="spacer-bottom-small">
-          <Link to={'/projects/'+obj.slug} class="underline">
-            {obj.name}
+    let categoryProjects = {'bigserious': [], 'freelance': [], 'fun': []};
+    let categoryProjectsDOM = {'bigserious': [], 'freelance': [], 'fun': []};
+    let projects = projectStore.getProjects();
+    for (var project of projects) {
+      categoryProjects[project.type].push(project);
+    }
+    
+    for (var category in categoryProjects) {
+
+      categoryProjectsDOM[category] = categoryProjects[category].map((obj, i) => (
+        <div 
+          class={projectParam == obj.slug ? 'active' : 'w-25 spacer-bottom-small'}
+          key={i}>
+          <Link to={'/projects/'+obj.slug}
+                class={projectParam ? 'sidebar-project-hold-left' : ''}>
+            <div class={projectParam ? 'aspect-outer pt100 spacer-bottom-medium' : 'aspect-outer pt130 spacer-bottom-medium'}>
+              <div class="aspect-inner">
+                <div class="project-image" 
+                   style={{
+                     backgroundImage: 'url('+obj.thumbBigURL+')'
+                   }}/>
+              </div>
+            </div>
           </Link>
-        </h3>
-        {obj.shortDescription}
-      </div>
-    ));
+          <Link to={'/projects/'+obj.slug} 
+                class={projectParam ? 'sidebar-project-pop-right' : 'project-description'}>
+            <h3>
+                {obj.name}
+            </h3>
+            {obj.title}
+          </Link>
+        </div>
+      ));
+    }
 
     pageContent = (
-      <div>
+      <section>
 
         <div>
-          <h2 class={projectParam ? 'hide intro' : 'intro'}>
+          <h2 class={projectParam ? 'hide' : 'intro'}>
             Något om projekt
           </h2>
           <div class={projectParam ? '' : 'hide'}>
             <h2 class="muted spacer-bottom-small">
               Andra projekt
             </h2>
-            <div class="divider" />
+            <div class="" />
           </div>
         </div>
 
         <section >
-          <h2 class={projectParam ? 'hide' : 'w-20 muted'}>Projekt</h2>
-          <div class="w-80 float">
+          <div class="w-100 float">
 
-            {projectsContent}
+            {categoryProjectsDOM['bigserious']}
+            {categoryProjectsDOM['freelance']}
+            {categoryProjectsDOM['fun']}
 
           </div>
         </section>
-      </div>
+
+      </section>
     );
 
     return ( //style={{overflow:'hidden'}}
       <div class="float projects-wrapper"> 
-        
+
         <div class={projectParam ? 'view-project' : 'view-project hide'}>
           <ReactCSSTransitionGroup
             component="div"
@@ -70,11 +88,14 @@ export default class Projects extends React.Component {
             {React.cloneElement(this.props.children || <div/>, { key, location })}
           </ReactCSSTransitionGroup>
         </div>
+
         <div class={projectParam ? 'projects-sidebar' : ''}>
           {pageContent}
         </div>
+
       </div>
     );
 
   }
 }
+
