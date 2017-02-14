@@ -1,5 +1,6 @@
 
 #article
+  max-width 740px
   font-family 'Merriweather', serif;
   font-weight 300
   overflow hidden
@@ -10,19 +11,28 @@
   h2 
     font-size 1.5rem
   h3
-    font-size 1rem
+    font-size 1.3rem
 
 .article-head
+  margin-top 50px
+  margin-bottom 25px
+  padding 0 25px
   h2
-    margin-top 50px
+    display inline
+    margin-left -50px
     font-weight bold
-    margin-bottom 20px
+    margin-bottom 40px
     
 .article-body
   padding 0 25px
   
-img
+img, .sider
   padding-top 25px
+  padding-bottom 40px
+  // +:after
+  //   display block
+  //   content ''
+  //   clear both
   &.center
     margin 15px auto
     display block
@@ -39,5 +49,32 @@ img
     
 p
   font-size 1.1rem
+  span.small-caps
+    font-variant small-caps
+    color #000
+    font-weight bold
   &+p 
     padding-top 25px
+  &.small
+    font-size 90%
+    
+ul
+  li, h3
+    padding-left 10px
+    font-size 90%
+    line-height 1.58
+    letter-spacing -.003em
+  li:before
+    content "•"
+    padding-right 5px
+    color black
+
+.sider
+  h3
+    padding-left 10px
+  li:before
+    color blue
+  &.left
+    padding-right 20px
+  &.right
+    padding-left 20px

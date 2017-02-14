@@ -12,6 +12,7 @@ export default class Projects extends React.Component {
     let project,
         pageContent,
         projectFrame,
+        techList,
         linkButton;
 
     project = projectStore.getProject(projectParam);
@@ -50,6 +51,13 @@ export default class Projects extends React.Component {
       // )
     }
 
+    if (project.tech) {
+      techList = project.tech.map((tech, i) => {
+        return <li key={i}>{tech}</li>;
+      });
+    }
+
+
     let copy = '';
     if (project.hasOwnProperty('html')) {
       copy = project.html();
@@ -57,14 +65,36 @@ export default class Projects extends React.Component {
 
     pageContent = (
       <div id="article">
-        {projectFrame}
         <div class="article-head">
-          <h2>{project.title}</h2>
+
+          <div class="float">
+            <div class="w-50">
+              <div class="aspect-outer pt100">
+                <div class="aspect-inner project-preview-circle" style={{'overflow':'hidden'}}>
+                  <div class="project-image-small" style={{backgroundImage: 'url('+project.thumbBigURL+')'}}/>/>
+                </div>
+              </div>
+            </div>
+            <div class="w-10"></div>
+
+            <h2>{project.title}</h2>
+
+            <ul class="sider left">
+              <h3>Tech:</h3>
+              {techList}
+            </ul>
+          </div>
+
+
         </div>
+        {projectFrame}
+        
         <div class="article-body">
 
           {linkButton}
+
           {copy}
+
         </div>
       </div>
     );

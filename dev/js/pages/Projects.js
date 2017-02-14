@@ -23,7 +23,7 @@ export default class Projects extends React.Component {
 
       categoryProjectsDOM[category] = categoryProjects[category].map((obj, i) => (
         <div 
-          class={projectParam == obj.slug ? 'active' : 'w-25 spacer-bottom-small'}
+          class={projectParam == obj.slug ? 'active' : 'w-25 min-100 spacer-bottom-small'}
           key={i}>
           <Link to={'/projects/'+obj.slug}
                 class={projectParam ? 'sidebar-project-hold-left' : ''}>

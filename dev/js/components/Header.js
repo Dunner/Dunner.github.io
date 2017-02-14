@@ -30,7 +30,7 @@ export default class Header extends React.Component {
             JH
           </Link>
           <span class="description fade run delayhide">
-            En kort introduktion
+            UI/UX Front-end utvecklare
           </span>
         </h1>
 
