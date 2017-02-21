@@ -6,55 +6,74 @@ import projectStore from "../data/projectStore"
 export default class Home extends React.Component {
 
   render() {
-    let showcase = projectStore.getProjects(5).map((obj, i) => (
-      <div class="w-15 spacer-bottom-big" key={i}>
-        <Link to={'projects/'+obj.slug} class="project-preview" title={obj.title}>
-          <div class="aspect-outer pt100">
-            <div class="aspect-inner project-preview-circle"
-                 style={{
-                  backgroundColor: obj.thumbColor
-                 }}/>
-          </div>
-          <div class="project-image-small spacer-bottom-medium" 
-               style={{
-                 backgroundImage: 'url('+obj.thumbURL+')'
-                }}/>
-          <div class="project-preview-text">
-            {obj.name}
-          </div>
-        </Link>
 
-      </div>
-    ));
+    let lastPair = projectStore.getProjectsInTwos(4,1);
+    lastPair.push({
+      title: 'Se fler projekt',
+      slug: '',
+      name: 'Mer',
+      path: '/projects',
+      thumbColor: 'transparent',
+      thumbURL: '/img/more.png'
+    });
+    let projectPairs = [
+      projectStore.getProjectsInTwos(0,2),
+      projectStore.getProjectsInTwos(2,2),
+      lastPair
+    ];
+    let projectPairsDOM = [];
+    projectPairs.map((pair, i) => {
+      let singles = [];
+      for (let single of pair) {
+        singles.push(
+          <div 
+            class="spacer-bottom-big project-single"
+            style={{
+              'width': '50%',
+              'float': 'left' }}
+            key={single.slug}>
+            <a href={'#'+single.path} class="project-preview" title={single.title}>
+              <div class="aspect-outer pt100">
+                <div class="aspect-inner project-preview-circle"
+                     style={{
+                      backgroundColor: single.thumbColor
+                     }}/>
+              </div>
+              <div class="project-image-small spacer-bottom-medium" 
+                   style={{
+                     backgroundImage: 'url('+single.thumbURL+')'
+                    }}/>
+              <div class="project-preview-text">
+                {single.name}
+              </div>
+            </a>
+          </div>
+        )
+      }
+      projectPairsDOM.push(
+        <div key={i} class="third">
+          {singles}
+        </div>
+      );
+    });
+
 
     return (
       <div>
         <section class="intro">
-          En logiskt vacker approach till <br />
-          webbutveckling med användaren i fokus. <br/>
-          Här finner du information <Link class="underline" to="about">om mig</Link> <br/>
-          och mina <Link class="underline" to="projects">företaganden</Link>.
+          Välkommen,<br />
+          jag är en kreativ webbutvecklare med en <br />
+          passion för användarvänlighet. <br />
+          <br />
+          Här har jag samlat information <a href="#/about" class="underline" to="about">om mig</a>,<br />
+          samt ett urval av mina <a href="#/projects" class="underline" to="projects">projekt</a>.<br />
+
         </section>
 
         <section class="float divider">
           <h2 class="w-15 muted">Projekt</h2>
           <div class="w-85 float">
-            {showcase}
-
-            <div class="w-15 spacer-bottom-big">
-
-                <Link to="projects" class="project-more">
-                  <div class="aspect-outer pt100">
-                    <div class="aspect-inner project-preview-circle"
-                         style={{backgroundColor: 'transparent'}} />
-                  </div>
-                  <div class="project-image-more spacer-bottom-medium"/>
-                  <div class="project-preview-text">
-                    Mer
-                  </div>
-                </Link>
-
-            </div>
+            {projectPairsDOM}
           </div>
 
         </section>

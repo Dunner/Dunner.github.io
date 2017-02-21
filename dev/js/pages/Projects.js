@@ -12,8 +12,9 @@ export default class Projects extends React.Component {
 
     let pageContent;
 
-    let categoryProjects = {'bigserious': [], 'freelance': [], 'fun': []};
-    let categoryProjectsDOM = {'bigserious': [], 'freelance': [], 'fun': []};
+    let categoryProjects = {'application': [], 'website': [], 'fun': []};
+    let categoryProjectsDOM = {'application': [], 'website': [], 'fun': []};
+    let categoryPairProjectsDOM = {'application': [], 'website': [], 'fun': []};
     let projects = projectStore.getProjects();
     for (var project of projects) {
       categoryProjects[project.type].push(project);
@@ -23,11 +24,11 @@ export default class Projects extends React.Component {
 
       categoryProjectsDOM[category] = categoryProjects[category].map((obj, i) => (
         <div 
-          class={projectParam == obj.slug ? 'active' : 'w-25 min-100 spacer-bottom-small'}
+          class={projectParam == obj.slug ? 'w-50 min-100 spacer-bottom-small active' : 'w-50 min-100 spacer-bottom-small'}
           key={i}>
           <Link to={'/projects/'+obj.slug}
                 class={projectParam ? 'sidebar-project-hold-left' : ''}>
-            <div class={projectParam ? 'aspect-outer pt100 spacer-bottom-medium' : 'aspect-outer pt130 spacer-bottom-medium'}>
+            <div class={projectParam ? 'aspect-outer pt100 spacer-bottom-mini' : 'aspect-outer pt130 spacer-bottom-mini'}>
               <div class="aspect-inner">
                 <div class="project-image" 
                    style={{
@@ -45,31 +46,54 @@ export default class Projects extends React.Component {
           </Link>
         </div>
       ));
+
+      for (var i = 0; i < categoryProjectsDOM[category].length; i+=2) {
+        var pair = [];
+        if (i%2 == 0) {
+          categoryPairProjectsDOM[category][i] = (
+            <div class="double" key={category+i}>
+              {categoryProjectsDOM[category][i]}
+              {categoryProjectsDOM[category][i+1]}
+            </div>
+          )
+
+        }
+      }
     }
 
     pageContent = (
       <section>
 
         <div>
-          <h2 class={projectParam ? 'hide' : 'intro'}>
+{/*          <h2 class={projectParam ? 'hide' : 'intro'}>
             Något om projekt
-          </h2>
+          </h2>*/}
           <div class={projectParam ? '' : 'hide'}>
-            <h2 class="muted spacer-bottom-small">
+            <h1>
               Andra projekt
-            </h2>
+            </h1>
             <div class="" />
           </div>
         </div>
 
         <section >
-          <div class="w-100 float">
-
-            {categoryProjectsDOM['bigserious']}
-            {categoryProjectsDOM['freelance']}
-            {categoryProjectsDOM['fun']}
-
+          <h2 class="projects-section muted float">Applikationer</h2>
+          <div class="float">
+            {categoryPairProjectsDOM['application']}
+            <div class="w-10"></div>
           </div>
+          <h2 class="projects-section muted float">Webbplatser</h2>
+          <div class="float">
+            {categoryPairProjectsDOM['website']}
+            <div class="w-10"></div>
+          </div>
+
+          <h2 class="projects-section muted float">Småkul</h2>
+          <div class="float">
+            {categoryPairProjectsDOM['fun']}
+            <div class="w-10"></div>
+          </div>
+
         </section>
 
       </section>
@@ -85,7 +109,7 @@ export default class Projects extends React.Component {
             transitionName="view-project-transition"
             transitionEnterTimeout={800}
             transitionLeaveTimeout={300}>
-            {React.cloneElement(this.props.children || <div/>, { key, location })}
+            {React.cloneElement(this.props.children || <div/>, { key })}
           </ReactCSSTransitionGroup>
         </div>
 

@@ -24,7 +24,7 @@ export default class About extends React.Component {
           //Add muteclass to skills with -- before them
           if (obj.substr(0,2)== '--') {
             obj = obj.replace('--','');
-            return <div class="muted">{obj}</div>}
+            return <div class="muted" key={skillArea+obj}>{obj}</div>}
 
           //make sure words separated by a / break like words(wrap in span inline-block's)
           var words = obj.split('/');
@@ -32,14 +32,15 @@ export default class About extends React.Component {
             obj = words
               .map(function(word, index){
                 if (index != words.length-1) {word+='/'}
-                return <span class="inline-block">{word}</span>;
+                return <span key={skillArea+word} class="inline-block">{word}</span>;
               });
           }
-
-          return <div>{obj}</div>;
+          return <div key={skillArea+index}>{obj}</div>;
         });
+
       // .map( (obj,index) => (<div key={index}>{obj}</div>))
     }
+
     return (
       <div>
 

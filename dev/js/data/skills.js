@@ -18,8 +18,8 @@ const skills = {
     'Express',
     'MongoDB',
     'Socket.io',
-    '--PHP',
-    '--SQL'
+    'PHP',
+    'SQL'
 
   ],
   devPatterns: [
@@ -36,7 +36,7 @@ const skills = {
   ],
   devServices: [
     'Git',
-    '--WordPress'
+    'WordPress'
   ],
 
   designTools: [

@@ -20,7 +20,10 @@ export default class Projects extends React.Component {
 
     if (project.linkURL) {
       linkButton = (
-        <a href={project.linkURL}>Se projektet!</a>
+        <div class="button__project float">
+          <a class="button-project__try"href={project.linkURL}>Se projektet!</a>
+
+        </div>
       );
     } else {
       linkButton = false;
@@ -28,10 +31,10 @@ export default class Projects extends React.Component {
 
     if (project.frameURL) {
       projectFrame = (
-        <div class="project-showcase">
+        <div class="project-showcase" style={{'height': project.frameHeight+'px'}}>
           <iframe
             class="inside"
-            scrolling="auto"
+            scrolling="no"
             title="Step by step form"
             src={project.frameURL}
             frameBorder="no"
@@ -73,29 +76,37 @@ export default class Projects extends React.Component {
                 <div class="aspect-inner project-preview-circle" style={{'overflow':'hidden'}}>
                   <div class="project-image-small" style={{backgroundImage: 'url('+project.thumbBigURL+')'}}/>/>
                 </div>
+
               </div>
+              {linkButton}
+
             </div>
             <div class="w-10"></div>
 
-            <h2>{project.title}</h2>
+            <h2>
+              {project.name} -<br/>
+              {project.title}
+            </h2>
 
             <ul class="sider left">
               <h3>Tech:</h3>
               {techList}
             </ul>
           </div>
-
+          
+          {project.sourceCodeURL.length > 2 &&
+            <a class="button-project__code" href={project.sourceCodeURL}>Kod</a>
+          }
 
         </div>
         {projectFrame}
         
         <div class="article-body">
 
-          {linkButton}
-
           {copy}
 
         </div>
+
       </div>
     );
 
@@ -109,7 +120,9 @@ export default class Projects extends React.Component {
 
     return (
       <section>
+
         {pageContent}
+
       </section>
     );
 
