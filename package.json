@@ -4,9 +4,10 @@
   "description": "Sweet & Simple",
   "main": "webpack.config.js",
   "scripts": {
-    "start": "SET NODE_ENV=development&& \"./node_modules/.bin/webpack-dev-server\" --content-base=dev --hot --inline --watch --host 0.0.0.0",
-    "build": "SET NODE_ENV=production&& \"./node_modules/.bin/webpack\"",
+    "start": "webpack-dev-server --content-base=dev --hot --inline --watch --host 0.0.0.0",
+    "build": "webpack -p",
     "deploy": "git subtree push --prefix dist origin gh-pages"
+    //npm run
   },
   "license": "MIT",
   "repository": "none",

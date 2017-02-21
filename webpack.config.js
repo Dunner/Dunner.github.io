@@ -1,6 +1,6 @@
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
-var development = process.env.NODE_ENV !== "production";
+var development = process.argv.indexOf('-p') === -1;
 var autoprefixer = require('autoprefixer');
 var webpack = require('webpack');
 var path = require('path');
