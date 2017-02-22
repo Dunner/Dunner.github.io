@@ -99,13 +99,13 @@ export default class Projects extends React.Component {
           }
 
         </div>
-        {projectFrame}
         
         <div class="article-body">
 
           {copy}
 
         </div>
+        {projectFrame}
 
       </div>
     );
