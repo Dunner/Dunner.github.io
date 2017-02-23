@@ -57,6 +57,7 @@ nav
 
 html
   font-size 18px
+  overflow-x hidden
       
 body 
   // font-family 'Open Sans', sans-serif
@@ -70,7 +71,7 @@ body
   font-weight 300
   background #efefef
   width 100%
-  overflow-x hidden
+  overflow hidden
 
 img
   max-width 100%
@@ -210,16 +211,15 @@ section
     color $text-color-muted
     &:after
       content attr(title)
+      text-align center
       background #333
       border-radius 5px
-      bottom 115%
+      bottom 95%
       color #fff
-      left -50px
       padding 0 10px
       line-height 30px
       position absolute
       z-index 98
-      min-width 500px
     & .project-preview-circle
       background transparent!important
     & .project-preview-text
