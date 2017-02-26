@@ -801,11 +801,9 @@ const projects = {
 <div>
 
   <p class="small-caps">
-    <span class="small-caps">Mer eller mindre ett vistkort för min konstnär till bror. </span>
+    <span class="small-caps">Mer eller mindre ett vistkort för en konstnär</span>
     Webbplatsen skapades strax före Liljevalchs vårutställning 2017 för att göra
-    min bror sökbar och kontaktbar via internet, för att komplementera den tavla han ställde
-    ut samt för att visa upp ytterligare konst i den händelse att tavlan skulle säljas och det
-    fortfarande fanns intresserade köpare.
+    konstnären sökbar och kontaktbar via internet.
     <br/>
     Sidan fick gott med besök under utställningsperioden.
   </p>
@@ -914,7 +912,7 @@ const projects = {
       backgroundURL: '',
       thumbURL: '/projects/stepform/img/stepform-thumb.png',
       thumbBigURL: '/projects/stepform/img/stepform-thumbbig.gif',
-      sourceCodeURL: 'http:////codepen.io/Dunner/JGBJgE',
+      sourceCodeURL: 'http://codepen.io/Dunner/pen/JGBJgEE',
       frameURL: '//codepen.io/Dunner/embed/JGBJgE/?height=550&theme-id=light&default-tab=result&embed-version=2',
       frameHeight: 550,
       tech: ['Angular'],
@@ -948,7 +946,7 @@ const projects = {
       backgroundURL: '',
       thumbURL: '/projects/cpicker/img/cpicker-thumb.png',
       thumbBigURL: '/projects/cpicker/img/cpicker-thumbbig.png',
-      sourceCodeURL: 'http:////codepen.io/Dunner/jWdEJv',
+      sourceCodeURL: 'http://codepen.io/Dunner/pen/jWdEJv',
       frameURL: '//codepen.io/Dunner/embed/jWdEJv/?height=560&theme-id=light&default-tab=result&embed-version=2',
       frameHeight: 560,
       tech: ['Angular', 'jQuery'],
@@ -981,7 +979,7 @@ const projects = {
       backgroundURL: '',
       thumbURL: '/projects/avatarmaker/img/avatarmaker-thumb.png',
       thumbBigURL: '/projects/avatarmaker/img/avatarmaker-thumbbig.png',
-      sourceCodeURL: 'http:////codepen.io/Dunner/Nbjbqe',
+      sourceCodeURL: 'http://codepen.io/Dunner/pen/Nbjbqe',
       frameURL: '//codepen.io/Dunner/embed/Nbjbqe/?height=620&theme-id=light&default-tab=result&embed-version=2',
       frameHeight: 620,
       tech: ['Angular', 'Snap.svg', 'Canvas', 'Stylus'],
