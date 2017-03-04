@@ -319,14 +319,14 @@ const projects = {
   <p>
     När två organismer parar sig föds en ny organism som ärver sina
     föräldrars synapser, då föräldrarnas synapser kan se helt olika ut får barnet
-    får en blandning av båda föräldrarnas synapser.
+    en blandning av båda föräldrarnas synapser.
     Varje gång en ny organism föds sker även en slumpmässig mutation
     som ändrar värdet i en av synapserna med ~0.05%.
     Detta skapar variation som ger organismerna möjligheten att utveckla
     helt nya beteenden som ingen av föräldarna hade. Över ett par generationer
-    kan mutationer skapa organismer som är väldigt olika från sina farfädrar.
-    Säg till exempel att om synapsen som muteras har en koppling till organismens
-    hastighet så kan organismen bli något snabbare är de andra och därmed ha
+    kan mutationer skapa organismer som är väldigt olika från dess förfädrar.
+    Säg till exempel att en muterad synaps har en koppling till organismens
+    hastighet så kan organismen bli något snabbare än de andra och därmed ha
     större förutsättningar att först nå maten och en partner att para sig med.
     Medans en ineffektiv mutation ofta leder till att organismen har en mindre
     chans att överleva och para sig än de andra. I längden kommer då organismen
@@ -342,7 +342,7 @@ const projects = {
   <p class="float">
     <img src="/projects/evonetics/img/randomparts.gif" class="left" width="20%"/>
     I nästa uppdatering ges alla organismer möjligheten att mutera nya och existerande
-    kroppsedelar. Organismens krop kanske blir längre eller så växer det fram ett nytt ben.
+    kroppsedelar. Organismens kropp kanske blir längre eller så växer det fram ett nytt ben.
     I regel ska det kunna växa fram hur många lemmar som helst och hur stora organismer
     som helst. Förhoppningen är att simulationen över tid ska finna de mest effektiva
     kroppsdelsuppsättningarna och storlekarna för överlevnad.
@@ -350,8 +350,8 @@ const projects = {
 
   <p>
     Organismen har möjligheten att kontrollera varje lem fritt. Lemmars rörelser utövar krafter
-    på kroppen som med mattematiska uträkningar och fysiska regler propellerar
-    organismen framåt i en miljö som simulerar vatten.
+    på kroppen som med mattematiska uträkningar och fysiska regler framdriver
+    organismen i en miljö som simulerar vatten.
   </p>
 
   <img src="/projects/evonetics/img/squid.gif" class="center" width="80%"/>&nbsp;
@@ -625,17 +625,17 @@ const projects = {
 
   <p>
     Allting centrerade runt deras dåvarande webbplats foss-viking.no som legat hos en norsk domänregistrar
-    som även handahöll en liten webbbyrå med ett hemmagjort CMS. Låter bra på pappret men i verkligheten så
-    var CMS-verktygen inte flexibla nog för Fossviking att själva ha tillräcklig kontroll över sin egen
-    webbplats och alla uppdateringar som de fick be webbyrån utföra var ett slukhål för Fossvikings ekonomi.
+    som även handahöll en liten webbbyrå med ett hemmagjort CMS. Låter bra på pappret men i verkligheten
+    var CMS-verktygen som erbjöds inte flexibla nog för Fossvikings behov.
+    <br/>
     Att en ny lösning behödes var det ingen fråga om och efter ett par möten med klienten kom vi överens
     om att gå över till Wordpress, inte riktigt mitt vassaste område men det stämde otroligt väl överens
     med vad klienten behövde och betydde även att jag inte behövde låsa upp mig eller klienten i framtiden.
     Wordpress ger full tillgång till allt, alltså kan en ny utvecklare ta över arbetet med Fossviking
-    när jag inte längre har möjligheten.
+    när jag inte längre har möjligheten, och det finns gott om Wordpressutvecklare.
     Det finns även otroligt gott om dokumentation som ger klienten själv möjlighet att sätta sig in i hur
     det fungerar och själv ha kontroll över webbplatsen, inga mer dyra betalningar för minimala uppdateringar
-    såsom utbyten av bilder eller tilläg av informationssidor.
+    såsom utbyten av bilder, tillägg av produkter eller skapande av nya informationssidor.
   </p>
 
   <h3>WEBBPLATSEN</h3>
@@ -802,8 +802,9 @@ const projects = {
 
   <p class="small-caps">
     <span class="small-caps">Mer eller mindre ett vistkort för en konstnär</span>
+    <br/>
     Webbplatsen skapades strax före Liljevalchs vårutställning 2017 för att göra
-    konstnären sökbar och kontaktbar via internet.
+    Johannes sökbar och kontaktbar via internet.
     <br/>
     Sidan fick gott med besök under utställningsperioden.
   </p>

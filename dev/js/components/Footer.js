@@ -27,9 +27,10 @@ export default class Footer extends React.Component {
     return (
       <footer class="divider spacer-bottom-big">
         <div class="float">
-          <div class="w-20">
+          <Link class="w-20"
+                to="home">
             <h1 class="punctum punctum-responsive">JH</h1>
-          </div>
+          </Link>
           <div class="w-40">
             <p class="muted">+46 (0)73 544 15 01</p>
             <a class="underline">jonathanhagglund@live.com</a>

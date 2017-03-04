@@ -47,7 +47,24 @@ export default class About extends React.Component {
 
 
         <section class="intro">
-          Om mig
+
+          <h2 class="muted spacer-bottom-big">Vem är jag?</h2>
+
+          <div class="about-text">
+            <p>
+              Jag är en kreativ webbutvecklare från Stockholm. 
+              Jag älskar att spåna på koncept,
+              ta fram prototyper och skapa riktigt bra produkter som sätter användaren i fokus.
+              Få saker gör mig så glad som att se mina skapelser användas utan problem och frustration.
+              När användaren kan göra det den vill ostört har jag gjort ett bra jobb.
+            </p>
+
+            <p>
+              Jag älskar tävling, 
+              njuter av löpning och sportande och är en riktig friluftsentusiast och flugfiskare.
+            </p>
+          </div>
+          
         </section>
 
 
