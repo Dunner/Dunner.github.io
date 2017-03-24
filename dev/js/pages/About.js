@@ -60,8 +60,9 @@ export default class About extends React.Component {
             </p>
 
             <p>
-              Jag älskar tävling, 
-              njuter av löpning och sportande och är en riktig friluftsentusiast och flugfiskare.
+              Jag är en friluftsentusiast med kärlek för fjällvärlden, skidåkning,
+              flugfiske och gillar att vara aktiv, älskar tävling,
+              sportande och framförallt min näst intill dagliga löpning.
             </p>
           </div>
           
@@ -70,7 +71,7 @@ export default class About extends React.Component {
 
         <section class="float divider spacer-bottom-big">
 
-          <h2 class="w-100 muted spacer-bottom-big">Utveckling</h2>
+          <h2 class="w-100 muted spacer-bottom-big">Färdigheter</h2>
 
           <h3 class="w-20 muted step-in">Frontend</h3>
           <div class="w-30 spacer-bottom-small step-in-twice">
